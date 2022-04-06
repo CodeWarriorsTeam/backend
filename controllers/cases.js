@@ -24,9 +24,11 @@ const createNewCase = (req, res) => {
 
   connection.query(query, data, (err, result) => {
     if (err) {
+  
       return res.status(500).json({
         success: false,
         message: `Server Error`,
+        err:err
       });
     }
 
