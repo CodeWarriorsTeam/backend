@@ -47,6 +47,7 @@ CREATE TABLE cases (
     TheAmountRequired INT,
     donations INT,
     donor INT,
+    emergencyCase VARCHAR(255),
     donation_id INT,
     FOREIGN KEY(donor) REFERENCES donation(donor_id),
     FOREIGN KEY (donation_id) REFERENCES donation(id),
