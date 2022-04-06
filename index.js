@@ -39,6 +39,10 @@ app.use("/gallery", galleryRouter);
 
 const volunteerRouter = require("./routes/volunteer");
 
+app.get("/test", (req, res) =>
+  res.json("server is running :)))))))))))))))))))))))))))")
+);
+
 app.use("/volunteer", volunteerRouter);
 
 const PORT = process.env.PORT || 5000;
