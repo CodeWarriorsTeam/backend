@@ -210,7 +210,7 @@ const getCountVolunteer = (req, res) => {
 };
 
 const getAllCasesEmergency = (req, res) => {
-  const query = `SELECT * FROM cases  WHERE cases.emergency ='true' AND  cases.is_deleted=0 `;
+  const query = `SELECT * FROM cases  WHERE cases.emergencyCase ='true' AND  cases.is_deleted=0 `;
 
   connection.query(query, async (err, result) => {
     if (err) {
@@ -236,11 +236,11 @@ const getAllCasesEmergency = (req, res) => {
 };
 
 const updateCaseByIdForEmergency = (req, res) => {
-  const { emergency } = req.body;
+  const { emergencyCase } = req.body;
   const id = req.params.id;
-  const query = `UPDATE cases SET emergency=? WHERE id=?`;
+  const query = `UPDATE cases SET emergencyCase=? WHERE id=?`;
 
-  const data = [emergency, id];
+  const data = [emergencyCase, id];
 
   connection.query(query, data, (err, result) => {
     if (err) {
